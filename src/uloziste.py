@@ -11,7 +11,7 @@ def nacist_vydaje(cesta: str) -> list[str]:
     """Načte všechny řádky ze souboru a vrátí je jako seznam. Pokud soubor neexistuje, vrátí seznam prázdný a nevyhodí chybu."""
     try:
         with open(cesta, mode="r", encoding="utf-8") as soubor:
-     #.readlines() našte soubor řádek po řádku do seznamu
-        return soubor.readlines()
+            #readlines() načte soubor řádek po řádku do seznamu
+            return soubor.readlines()
     except FileNotFoundError:
         return []
