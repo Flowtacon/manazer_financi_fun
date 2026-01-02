@@ -1,5 +1,9 @@
 # Importutejeme naši funkci ze složky src
 from src.vypocty import vytvorit_vydaj
+from src.uloziste import pridat_radek
+
+#Definujeme konstantu ať ji nemáme natvrdo v kódu
+CESTA_K_DATUM = "data/vydaje.txt"
 
 def main():
     print("___MANAŽÉR VÝDAJŮ___")
@@ -18,7 +22,11 @@ def main():
     # Použití naší funkce
     radek_pro_ulozeni = vytvorit_vydaj(zbozi, cena)
 
-    print(f"Připraveno k uložení: {radek_pro_ulozeni.strip()}")
+    print(f"Ukládám do souboru: {CESTA_K_DATUM} ...")
+
+    pridat_radek(CESTA_K_DATUM, radek_pro_ulozeni)
+
+    print("✅ Uloženo!")
 
 #Vstupní bod programu:
 if __name__ == "__main__":
